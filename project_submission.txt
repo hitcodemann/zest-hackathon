@@ -1,0 +1,57 @@
+PROJECT SUBMISSION DETAILS
+==========================
+
+1. Business Challenge / Problem Statement
+-----------------------------------------
+Traditional banking apps are utilitarian, boring, and disconnected from the Gen Z lifestyle. They fail to engage the younger generation who prioritize experiences, social connection, and visual aesthetics. Financial literacy is low because learning materials are dry and unappealing. Gen Z needs a financial companion that speaks their language, understands their "vibes," and turns money management into a rewarding game rather than a chore.
+
+2. Solution & Architecture
+--------------------------
+Solution: "Zest" - The Gen Z Financial Bestie.
+Zest is a high-fidelity web application prototype designed to look and feel like a native social media app. It features:
+- "Money Twin" AI: A hyper-personalized AI agent that roasts bad spending and hypes up savings using Gen Z slang.
+- Gamification: Daily quests, streaks, and XP to make financial habits addictive.
+- AR "Future Me": A visual motivator showing the consequences of spending habits.
+- One-Tap Marketplace: Simplified access to complex financial products.
+
+Architecture:
+- Frontend: Next.js (React framework) for a responsive, mobile-first interface.
+- State Management: React Context API + LocalStorage for persistent user data (Goals, Name, API Keys) without a complex backend for the prototype.
+- AI Layer: Integration with Google's Gemini 2.0 Flash model for real-time, context-aware chat responses.
+- Agentic Layer: A background "AgentContext" that monitors user data (goals, spending) to trigger proactive popups and advice.
+
+3. Prompts Used for the Solutions
+---------------------------------
+System Prompt for "Money Twin" (Gemini API):
+"You are Zest, a Gen Z financial 'bestie' AI. 
+User Name: ${name}
+User Goals: ${goalSummary}
+
+Persona:
+- Speak like a Gen Z/Alpha (use slang like 'no cap', 'bet', 'slay', 'delulu', 'math ain't mathing').
+- Be helpful but funny. Roast bad financial decisions gently.
+- If the user asks about their goals, analyze the data provided.
+- Keep responses short (under 50 words) and punchy."
+
+Agentic Trigger Logic (Simulated Prompt):
+"Check user goals. If user has a high-priority goal (e.g., Laptop) and recent spending on non-essentials, trigger a notification: 'Hey! You're saving for that Laptop, right? Don't buy coffee today.'"
+
+4. Tech Stack Used
+------------------
+- Framework: Next.js 14 (App Router)
+- Language: TypeScript
+- Styling: CSS Modules (Custom "Gen Z" Design System with Neon/Dark Mode aesthetics)
+- Animations: Framer Motion (for swipeable cards and micro-interactions)
+- Icons: Lucide React
+
+5. APIs Used
+------------
+- Google Gemini API (Model: gemini-2.0-flash): Powers the "Money Twin" chat and analyzes user context.
+- HTML5 MediaDevices API: Accesses the webcam for the "Future Me" AR Mirror feature.
+- HTML5 LocalStorage API: Persists user sessions, goals, and settings on the device.
+
+6. Tools Used
+-------------
+- VS Code: Integrated Development Environment.
+- Google Gemini (Agentic AI): Used for pair programming, code generation, and debugging.
+- npm: Package management.
